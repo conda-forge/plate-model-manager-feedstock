@@ -1,5 +1,5 @@
 {% set name = "plate-model-manager" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plate-model-manager-{{ version }}.tar.gz
-  sha256: 5fc36d4e915859cffc2d0a4a6c4ebc2cd7be3f9a76bebd6cccb6ab70a0f22642
+  sha256: bf1ffe4eb6c7f5eb5c212041bd44fd521b3abc63b4efe77f5e8d89e7990770a4
 
 build:
   entry_points:
