@@ -1,5 +1,5 @@
 {% set name = "plate-model-manager" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plate-model-manager-{{ version }}.tar.gz
-  sha256: d7507eb7f506e6252bc404e661466b4c699a0e3e8127a87a972316eee0e5c6fa
+  sha256: 027ad5ef92a8992eb0cf82164c8ccc2af36c17308a4f96c503799d0e3fbf5ae9
 
 build:
   entry_points:
@@ -18,14 +18,15 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.8
     - setuptools >=61.0.0
     - wheel
     - pip
   run:
-    - python >=3.9
+    - python >=3.8
     - aiohttp
     - requests
+    - nest_asyncio
 
 test:
   imports:
