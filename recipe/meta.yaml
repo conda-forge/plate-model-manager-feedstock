@@ -26,7 +26,7 @@ requirements:
     - python >=3.8
     - aiohttp
     - requests
-    - nest_asyncio
+    - nest-asyncio
 
 test:
   imports:
