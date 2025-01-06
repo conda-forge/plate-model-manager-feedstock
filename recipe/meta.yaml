@@ -14,7 +14,7 @@ build:
     - pmm = plate_model_manager.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -22,6 +22,7 @@ requirements:
     - setuptools >=61.0.0
     - wheel
     - pip
+    - setuptools-git-versioning
   run:
     - python >={{ python_min }}
     - aiohttp
