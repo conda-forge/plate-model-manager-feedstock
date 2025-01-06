@@ -1,29 +1,29 @@
 {% set name = "plate-model-manager" %}
-{% set version = "1.1.5" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plate-model-manager-{{ version }}.tar.gz
-  sha256: 027ad5ef92a8992eb0cf82164c8ccc2af36c17308a4f96c503799d0e3fbf5ae9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 55d2bdd09e5efc9c12b6ad23a381246e3eb1a62877795d302d9df05a61aa014c
 
 build:
   entry_points:
     - pmm = plate_model_manager.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.0.0
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - aiohttp
     - requests
     - nest-asyncio
@@ -36,6 +36,7 @@ test:
     - pmm --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/michaelchin/plate-model-manager
